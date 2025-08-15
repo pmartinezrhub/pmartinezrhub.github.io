@@ -11,7 +11,7 @@ export default function About() {
       
             <div data-aos="fade-up" data-aos-duration="2500" data-aos-delay="300" className="p-6 bg-blue-500 rounded-xl text-white">
         <h2>Passionated of computers, im working on IT since 20years ago. Allways learning new things about the computer world, but the most i like is 
-          GNU/Linux and cibersecurity in general. Haver you visit my CiberWiki?</h2>
+          GNU/Linux and cibersecurity in general. Have you visit my CiberWiki?</h2>
       </div>
         <div data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500" className="p-6 bg-blue-500 rounded-xl text-white">
         <center><Image src={skullPic} alt="skull" width={100} height={100} className="rounded-full" /></center>
