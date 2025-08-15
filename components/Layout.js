@@ -1,6 +1,13 @@
 import Navbar from './Navbar'
 import Footer from './Footer'
 
+export const metadata = {
+  title: 'pmartinezr',
+  description: 'Personal site',
+  icons: {
+    icon: '/favicon.png'
+  }
+}
 
 export default function Layout({ children }) {
   return (
