@@ -50,7 +50,7 @@ export default function Home() {
         <h4><p className="text-xl">Date - &#91; {timeString} &#93;</p></h4>
         <h1 className="flex items-center gap-2">
           <Image src={profilePic} alt="profile" width={32} height={32} className="rounded-full" />
-          Welcome, I'm Pablo Martínez Rivas
+            &nbsp;&nbsp;Welcome, I'm Pablo Martínez Rivas
         </h1>
       </div>
 
