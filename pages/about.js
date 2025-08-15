@@ -27,7 +27,7 @@ export default function About() {
       </div>
       <h4>Social Links and CV</h4>
       <a href="https://www.linkedin.com/in/pablo-m-8552a790/" target="_blank"><Image src={socialLinkedin} alt="skull" width={32} height={32} className="rounded-full" /></a>
-      <a href="https://github.com/pmartinezrhub/pmartinezr-portfolio.io" target="_blank"><Image src={socialGitHub} alt="skull" width={32} height={32} className="rounded-full" /></a>
+      <a href="https://github.com/pmartinezrhub/" target="_blank"><Image src={socialGitHub} alt="skull" width={32} height={32} className="rounded-full" /></a>
      
      
       <a href="mailto:admin@pmartinezr.work">
