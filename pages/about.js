@@ -11,7 +11,7 @@ export default function About() {
       
             <div data-aos="fade-up" data-aos-duration="2500" data-aos-delay="300" className="p-6 bg-blue-500 rounded-xl text-white">
         <h2>Passionated of computers, im working on IT since 20years ago. Allways learning new things about the computer world, but the most i like is 
-          GNU/Linux and cibersecurity in general. Have you visit my CiberWiki?</h2>
+          GNU/Linux and cibersecurity in general. Im Spanish 🇪🇸. Have you visit my CiberWiki?</h2>
       </div>
         <div data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500" className="p-6 bg-blue-500 rounded-xl text-white">
         <center><Image src={skullPic} alt="skull" width={100} height={100} className="rounded-full" /></center>
@@ -19,10 +19,10 @@ export default function About() {
       <div data-aos="fade-down" data-aos-duration="2500" data-aos-delay="300" className="p-6 bg-blue-500 rounded-xl text-white">
       <h2 className="text-2xl font-semibold mt-6 mb-2">Habilities</h2>
       <ul className="list-disc pl-5">
-        <li>OS: GNU/Linux, VMWare, LXC, Docker, Qemu, Windows Server</li>
-        <li>Programming: Python, Django, Bash, PowerShell, Java, PHP, HTML, CSS, Javascript, Git, SQL </li>
-        <li>DevOps: Puppet, Ansible, Apache, Nginx</li>
-        <li>Pentesting: Zap/Burp, Metasploit, SQLmap, WireShark, Nmap </li>
+        <li>💻 OS: GNU/Linux, VMWare, LXC, , Qemu, Windows Server</li>
+        <li>👨‍💻 Programming: Python, Django, Bash, PowerShell, Java, PHP, HTML, CSS, Javascript, Git, SQL </li>
+        <li>🔄 DevOps: Docker, Puppet, Ansible, Apache, Nginx</li>
+        <li>🔐Pentesting: Zap/Burp, Metasploit, SQLmap, WireShark, Nmap </li>
       </ul>
       </div>
       <h4>Social Links and CV</h4>
