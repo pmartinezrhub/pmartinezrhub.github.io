@@ -31,7 +31,7 @@ export default function About() {
      
      
       <a href="mailto:admin@pmartinezr.work">
-        m@il 
+        &nbsp;&nbsp;em@il✉️&nbsp;&nbsp; 
       </a>
       <a href="/cv_pablomartinezrivas.pdf" download className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"> CV Download  </a>
         <div>
