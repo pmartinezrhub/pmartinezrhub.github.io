@@ -22,7 +22,7 @@ export default function About() {
         <li>💻 OS: GNU/Linux, VMWare, LXC, , Qemu, Windows Server</li>
         <li>👨‍💻 Programming: Python, Django, Bash, PowerShell, Java, PHP, HTML, CSS, Javascript, Git, SQL </li>
         <li>🔄 DevOps: Docker, Puppet, Ansible, Apache, Nginx</li>
-        <li>🔐Pentesting: Zap/Burp, Metasploit, SQLmap, WireShark, Nmap </li>
+        <li>🔐 Pentesting: Zap/Burp, Metasploit, SQLmap, WireShark, Nmap </li>
       </ul>
       </div>
       <h4>Social Links and CV</h4>
