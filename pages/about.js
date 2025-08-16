@@ -17,7 +17,7 @@ export default function About() {
         <center><Image src={skullPic} alt="skull" width={100} height={100} className="rounded-full" /></center>
       </div>
       <div data-aos="fade-down" data-aos-duration="2500" data-aos-delay="300" className="p-6 bg-blue-500 rounded-xl text-white">
-      <h2 className="text-2xl font-semibold mt-6 mb-2">Habilities</h2>
+      <h2 className="text-2xl font-semibold mt-6 mb-2">Some habilities</h2>
       <ul className="list-disc pl-5">
         <li>💻 OS: GNU/Linux, VMWare, LXC, , Qemu, Windows Server</li>
         <li>👨‍💻 Programming: Python, Django, Bash, PowerShell, Java, PHP, HTML, CSS, Javascript, Git, SQL </li>
