@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No tests yet\"",
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "npx serve@latest out"
+  }
+
   },
   "keywords": [],
   "author": "",
