@@ -8,7 +8,7 @@ export default function Navbar() {
 
         {/* Links */}
         <div className="flex gap-6">
-          <Link href="/" className="hover:text-yellow-400 transition-colors"> Home&nbsp;&nbsp;  </Link>
+          <Link href="https://pmartinezr.work" className="hover:text-yellow-400 transition-colors"> Home&nbsp;&nbsp;  </Link>
           <Link href="/about" className="hover:text-yellow-400 transition-colors"> About&nbsp;&nbsp;  </Link>
           <Link href="/services" className="hover:text-yellow-400 transition-colors"> Services&nbsp;&nbsp;  </Link>
           <Link href="https://wiki.pmartinezr.work" target="_blank" rel="noopener noreferrer" className="hover:text-yellow-400 transition-colors">
