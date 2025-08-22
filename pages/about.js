@@ -18,7 +18,7 @@ export default function About() {
       </div>
       <div data-aos="fade-down" data-aos-duration="2500" data-aos-delay="300" className="p-6 bg-blue-500 rounded-xl text-white">
       <h2 className="text-2xl font-semibold mt-6 mb-2">Some habilities</h2>
-      <ul className="list-disc pl-5">
+      <ul className="list-disc pl-5 pl-5 text-lg">
         <li>💻 OS: GNU/Linux, VMWare, LXC, , Qemu, Windows Server</li>
         <li>👨‍💻 Programming: Python, Django, Bash, PowerShell, Java, PHP, HTML, CSS, Javascript, Git, SQL </li>
         <li>🔄 DevOps: Docker, Puppet, Ansible, Apache, Nginx</li>

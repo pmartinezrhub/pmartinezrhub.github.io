@@ -6,7 +6,7 @@ export default function Services() {
       <div data-aos="fade-up" data-aos-duration="2500" data-aos-delay="300" className="p-6 bg-blue-500 rounded-xl text-white">
       <h2 className="text-2xl font-semibold mt-6 mb-2">Servicies</h2>
       
-       <ul className="list-disc pl-5">
+       <ul className="list-disc pl-5 text-lg">
         <li>🌎 Web cybersecurity audit </li>
         The realization of this audition includes techniques for <a href="https://owasp.org/www-project-top-ten/"> https://owasp.org/www-project-top-ten </a>
         Web audits include techniques and tools aimed at uncovering vulnerabilities in web applications.
