@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "npx serve@latest out"
+    "start": "npx serve@latest out",
+    "test": "echo \"No tests defined\""
   },
   "keywords": [],
   "author": "",
