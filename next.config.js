@@ -3,9 +3,9 @@
 const nextConfig = {
   output: 'export',
   images: {
-    unoptimized: true // <- importante para GitHub Pages
+    unoptimized: true
   },
-  basePath: '/pmartinezr-portfolio.io', // <- si tu repo NO es user.github.io, debes agregarlo
+  basePath: '/portfolio', 
 };
 
 module.exports = nextConfig;
