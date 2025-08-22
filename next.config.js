@@ -1,12 +1,12 @@
+// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /**added cause error=>  `next export` has been removed in favor of 'output: export' in next.config.js.
-  You should retire this line if you use this out of github deploymen */
   output: 'export',
   images: {
-    unoptimized: true
-  }
-  
+    unoptimized: true // <- importante para GitHub Pages
+  },
+  basePath: '/pmartinezr-portfolio.io', // <- si tu repo NO es user.github.io, debes agregarlo
 };
 
 module.exports = nextConfig;
+
