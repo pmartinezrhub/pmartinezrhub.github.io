@@ -10,7 +10,7 @@ export default function About() {
       <h1 className="text-3xl font-bold mb-4"> About me</h1>
       
         <div data-aos="fade-up" data-aos-duration="2500" data-aos-delay="300" className="p-6 bg-blue-500 rounded-xl text-white">
-        <h2>Passionate about computers, I've been working in IT for 20 years. I'm always learning new things about the technological world, and I enjoy cybersecurity. Im Spanish 🇪🇸. Have you visit my CiberWiki?</h2>
+        <h2>Passionate about computers, I've been working in IT for 20 years. I'm always learning new things about the technological world, and I enjoy cybersecurity. Im from Span 🇪🇸. Have you visit my CiberWiki?</h2>
       </div>
         <div data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500" className="p-6 bg-blue-500 rounded-xl text-white">
         <center><Image src={skullPic} alt="skull" width={100} height={100} className="rounded-full" /></center>
