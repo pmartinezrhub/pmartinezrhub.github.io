@@ -26,8 +26,11 @@ export default function About() {
         <li>🔐 Pentesting: Zap/Burp, Metasploit, SQLmap, WireShark, Nmap </li>
       </ul>
       </div>
-      
+
       <div style={{ display: "flex", gap: "8px" }}>
+              <div style={{ width: 40, height: 40 }}>
+        <StackIcon name="linux" />
+      </div>
       <div style={{ width: 40, height: 40 }}>
         <StackIcon name="django" />
       </div>
@@ -52,6 +55,9 @@ export default function About() {
       <div style={{ width: 40, height: 40 }}>
         <StackIcon name="apache" />
       </div>
+            <div style={{ width: 40, height: 40 }}>
+        <StackIcon name="cloudflare" />
+      </div>
           <div style={{ width: 40, height: 40 }}>
         <StackIcon name="java" />
       </div>
@@ -59,7 +65,7 @@ export default function About() {
         <StackIcon name="php" />
       </div>
     </div>
-    
+    <hr></hr>
 
       <h4>Social Links and CV</h4>
       <a href="https://www.linkedin.com/in/pablo-m-8552a790/" target="_blank"><Image src={socialLinkedin} alt="skull" width={32} height={32} className="rounded-full" /></a>
