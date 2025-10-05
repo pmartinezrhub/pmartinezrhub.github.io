@@ -13,11 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "aos": "^2.3.4",
-    "install": "^0.13.0",
     "next": "^15.5.0",
-    "npm": "^11.5.2",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tech-stack-icons": "^3.3.2"
   },
   "devDependencies": {
