@@ -1,6 +1,6 @@
 import Layout from '../components/Layout'
 import Image from 'next/image'
-import skullPic from '../public/images/3dskull-878774769.gif'
+//import skullPic from '../public/images/3dskull-878774769.gif'
 import socialLinkedin from '../public/social_icons/LI-In-Bug.png'
 import socialGitHub from '../public/social_icons/github-mark.png'
 import StackIcon, { IconName } from "tech-stack-icons";
@@ -15,7 +15,7 @@ export default function About() {
         <h2>Passionate about computers, I've been working in IT for 20 years. I'm always learning new things about the technological world, and I enjoy cybersecurity. Im from Span 🇪🇸. Have you visit my CiberWiki?</h2>
       </div>
         <div data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500" className="p-6 bg-blue-500 rounded-xl text-white">
-        <center><Image src={skullPic} alt="skull" width={100} height={100} className="rounded-full" /></center>
+        {/* <center><Image src={skullPic} alt="skull" width={100} height={100} className="rounded-full" /></center>  */}
       </div>
       <div data-aos="fade-down" data-aos-duration="2500" data-aos-delay="300" className="p-6 bg-blue-500 rounded-xl text-white">
       <h2 className="text-2xl font-semibold mt-6 mb-2">Some habilities</h2>
