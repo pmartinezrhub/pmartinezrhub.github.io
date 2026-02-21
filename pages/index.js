@@ -1,78 +1,125 @@
 import Layout from '../components/Layout'
 import Image from 'next/image'
 import profilePic from '../public/images/profile.png'
-import { useEffect, useState } from 'react';
-import AOS from 'aos';
+import { useEffect, useState, useRef } from 'react'
+import Script from 'next/script'
+import AOS from 'aos'
 
 export default function Home() {
-  const [timeString, setTimeString] = useState('');
+  const [timeString, setTimeString] = useState('')
+  const canvasRef = useRef(null)
 
   useEffect(() => {
-    AOS.init({ once: true });
+    AOS.init({ once: true })
 
     function updateTime() {
-      const currentTime = new Date();
+      const currentTime = new Date()
 
-      const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      const daysOfWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+      const months = ['January','February','March','April','May','June','July','August','September','October','November','December']
 
-      const dayOfWeek = daysOfWeek[currentTime.getDay()];
-      const month = months[currentTime.getMonth()];
-      const dayOfMonth = currentTime.getDate();
-      const hours = currentTime.getHours();
-      const minutes = currentTime.getMinutes();
-      const seconds = currentTime.getSeconds();
+      const dayOfWeek = daysOfWeek[currentTime.getDay()]
+      const month = months[currentTime.getMonth()]
+      const dayOfMonth = currentTime.getDate()
+      const hours = currentTime.getHours()
+      const minutes = currentTime.getMinutes()
+      const seconds = currentTime.getSeconds()
 
       setTimeString(
-        `${dayOfWeek}, ${month} ${dayOfMonth}, ${hours.toString().padStart(2, '0')}:${minutes
+        `${dayOfWeek}, ${month} ${dayOfMonth}, ${hours
           .toString()
-          .padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
-      );
+          .padStart(2,'0')}:${minutes
+          .toString()
+          .padStart(2,'0')}:${seconds
+          .toString()
+          .padStart(2,'0')}`
+      )
     }
 
-    updateTime(); // mostrar inmediatamente
-    const interval = setInterval(updateTime, 1000);
+    updateTime()
+    const interval = setInterval(updateTime, 1000)
 
-    return () => clearInterval(interval); // limpiar al desmontar
-  }, []);
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <Layout>
-      <br />
-      <div style={{ height: '10vh' }}></div>
 
-      <div
-        data-aos="fade-down"
-        data-aos-duration="2500"
-        data-aos-delay="300"
-        className="p-6 bg-blue-500 rounded-xl text-white"
-      >
-        <h4><p className="text-xl">Date - &#91; {timeString} &#93;</p></h4>
+      <div style={{ height: '10vh' }}></div>
+      <Script
+        src="https://cdn.jsdelivr.net/npm/cmatrix"
+        strategy="afterInteractive"
+        onLoad={() => {
+          if (window.matrix && canvasRef.current) {
+            let matrixInstance;
+
+            window.matrix(canvasRef.current, {
+              chars: ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'],
+              color: 'black',
+              font_size: 18,
+              background: 'rgba(255,255,255,0.1)',
+              width: 800,
+              height: 600,
+              resize: false,
+              exit: false,
+              fps: 8,
+              mount: (m) => { 
+                matrixInstance = m; 
+                matrixInstance.start(); // iniciar cuando se monta
+              }
+            });
+
+            // ejemplo: pausas automáticas
+            setInterval(() => {
+              if (matrixInstance) {
+                matrixInstance.stop();
+                setTimeout(() => matrixInstance.start(), 400);
+              }
+            }, 200);
+          }
+        }}
+      />
+      <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
+      <div style={{ flex: 1 }}>
+        <div className="p-6 bg-blue-500 rounded-xl text-white">
+                <div className="p-6 bg-blue-500 rounded-xl text-white mt-6">
+
+
         <h1 className="flex items-center gap-2">
-          <Image src={profilePic} alt="profile" width={32} height={32} className="rounded-full" />
-            &nbsp;&nbsp;Welcome, I'm Pablo Martínez Rivas
+          <Image
+            src={profilePic}
+            alt="profile"
+            width={32}
+            height={32}
+            className="rounded-full"
+          />
+          &nbsp;&nbsp;Welcome, I'm Pablo Martínez Rivas
         </h1>
       </div>
-
-      <div
-        data-aos="fade-right"
-        data-aos-duration="2500"
-        data-aos-delay="300"
-        className="p-6 bg-blue-500 rounded-xl text-white mt-4"
-      >
-        <h2>Linux system administrator, pentester and developer</h2>
-       
+           <p>Date - &#91; {timeString} &#93;</p>
+        </div>
       </div>
-
-      {/* Bloque de fecha/hora */}
       <div
-        data-aos="fade-up"
-        data-aos-duration="2500"
-        data-aos-delay="300"
-        className="p-6 bg-gray-800 rounded-xl text-white mt-4 text-center"
+        style={{
+          width: '800px',
+          height: '600px',
+          overflow: 'hidden',
+          borderRadius: '12px',
+          background: 'white'
+        }}
       >
-       
+        <canvas
+          ref={canvasRef}
+          width={400}
+          height={200}
+          style={{ display: 'block' }}
+        />
       </div>
+    </div>
+
+
+
+
     </Layout>
-  );
+  )
 }
