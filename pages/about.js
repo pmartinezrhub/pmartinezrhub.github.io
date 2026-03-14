@@ -3,6 +3,7 @@ import Image from 'next/image'
 //import skullPic from '../public/images/3dskull-878774769.gif'
 import socialLinkedin from '../public/social_icons/LI-In-Bug.png'
 import socialGitHub from '../public/social_icons/github-mark.png'
+import socialCredly from '../public/social_icons/credly.svg'
 import StackIcon, { IconName } from "tech-stack-icons";
 
 export default function About() {
@@ -68,9 +69,9 @@ export default function About() {
     <hr></hr>
 
       <h4>Social Links and CV</h4>
-      <a href="https://www.credly.com/users/pablo-martinez-rivas/badges#credly" target="_blank">Certifications and badges</a>
-      <a href="https://www.linkedin.com/in/pmartinezrivas/" target="_blank"><Image src={socialLinkedin} alt="skull" width={32} height={32} className="rounded-full" /></a>
-      <a href="https://github.com/pmartinezrhub/" target="_blank"><Image src={socialGitHub} alt="skull" width={32} height={32} className="rounded-full" /></a>
+      <a href="https://www.credly.com/users/pablo-martinez-rivas/badges#credly" target="_blank"><Image src={socialCredly} alt="" width={32} height={32} className="rounded-full" /></a>&nbsp;&nbsp; 
+      <a href="https://www.linkedin.com/in/pmartinezrivas/" target="_blank"><Image src={socialLinkedin} alt="skull" width={32} height={32} className="rounded-full" /></a>&nbsp;&nbsp; 
+      <a href="https://github.com/pmartinezrhub/" target="_blank"><Image src={socialGitHub} alt="skull" width={32} height={32} className="rounded-full" /></a>&nbsp;&nbsp; 
      
      
       <a href="mailto:admin@pmartinezr.work">
