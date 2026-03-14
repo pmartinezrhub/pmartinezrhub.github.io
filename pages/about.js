@@ -68,7 +68,7 @@ export default function About() {
     <hr></hr>
 
       <h4>Social Links and CV</h4>
-      <a href="https://www.credly.com/users/pablo-martinez-rivas/badges#credly">Certifications and badges</a>
+      <a href="https://www.credly.com/users/pablo-martinez-rivas/badges#credly" target="_blank">Certifications and badges</a>
       <a href="https://www.linkedin.com/in/pmartinezrivas/" target="_blank"><Image src={socialLinkedin} alt="skull" width={32} height={32} className="rounded-full" /></a>
       <a href="https://github.com/pmartinezrhub/" target="_blank"><Image src={socialGitHub} alt="skull" width={32} height={32} className="rounded-full" /></a>
      
