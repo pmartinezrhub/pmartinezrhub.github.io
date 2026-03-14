@@ -68,14 +68,15 @@ export default function About() {
     <hr></hr>
 
       <h4>Social Links and CV</h4>
-      <a href="https://www.linkedin.com/in/pablo-m-8552a790/" target="_blank"><Image src={socialLinkedin} alt="skull" width={32} height={32} className="rounded-full" /></a>
+      <a href="https://www.credly.com/users/pablo-martinez-rivas/badges#credly">Certifications and badges</a>
+      <a href="https://www.linkedin.com/in/pmartinezrivas/" target="_blank"><Image src={socialLinkedin} alt="skull" width={32} height={32} className="rounded-full" /></a>
       <a href="https://github.com/pmartinezrhub/" target="_blank"><Image src={socialGitHub} alt="skull" width={32} height={32} className="rounded-full" /></a>
      
      
       <a href="mailto:admin@pmartinezr.work">
         &nbsp;&nbsp;em@il✉️&nbsp;&nbsp; 
       </a>
-      <a href="/cv_pablomartinezrivas.pdf" download className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"> CV Download  </a>
+    
         <div>
 
     </div>
