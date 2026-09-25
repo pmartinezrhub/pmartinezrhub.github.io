@@ -4,7 +4,6 @@ import profilePic from '../public/images/profile.png'
 import { useEffect, useState, useRef } from 'react'
 import Script from 'next/script'
 import AOS from 'aos'
-import MatrixCycler from '../lib/MatrixCycler'
 
 export default function Home() {
   const [timeString, setTimeString] = useState('')
