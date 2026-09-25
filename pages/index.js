@@ -1,6 +1,7 @@
 import Layout from '../components/Layout'
 import Image from 'next/image'
 import profilePic from '../public/images/profile.png'
+import dskull from '../public/images/3dskull-878774769.gif'
 import { useEffect, useState, useRef } from 'react'
 import Script from 'next/script'
 import AOS from 'aos'
@@ -53,9 +54,7 @@ export default function Home() {
           if (window.matrix && canvasRef.current) {
             window.matrix(canvasRef.current, {
               chars: ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'],
-              color: 'black',
               font_size: 18,
-              background: 'rgba(255,255,255,0.1)',
               width: 800,
               height: 600,
               resize: false,
@@ -67,45 +66,57 @@ export default function Home() {
         }}
       />
       <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-      <div style={{ flex: 1 }}>
-        <div className="p-6 bg-blue-500 rounded-xl text-white">
-                <div className="p-6 bg-blue-500 rounded-xl text-white mt-6">
 
-
-        <h1 className="flex items-center gap-2">
-          <Image
-            src={profilePic}
-            alt="profile"
-            width={32}
-            height={32}
-            className="rounded-full"
-          />
-          &nbsp;&nbsp;Welcome, I'm Pablo Martínez Rivas
-        </h1>
-      </div>
-           <p>Date - &#91; {timeString} &#93;</p>
+        <div style={{ flex: 1 }}>
+          <div className="p-6 bg-blue-500 rounded-xl text-white">
+            <div className="p-6 bg-blue-500 rounded-xl text-white mt-6">
+              <h1 className="flex items-center gap-2">
+                <Image
+                  src={profilePic}
+                  alt="profile"
+                  width={32}
+                  height={32}
+                  className="rounded-full"
+                />
+                &nbsp;&nbsp;Welcome, I'm Pablo Martínez Rivas
+              </h1>
+            </div>
+           <p className="matrix-clock">Date - &#91; {timeString} &#93;</p>
+            <p className="terminal-prompt">
+              <span className="prompt-user">pablo</span>
+              <span className="prompt-symbol">☠</span>
+              <span className="prompt-host">hack</span>
+              <span className="prompt-symbol">:~$</span>
+              <span className="terminal-cursor">█</span>
+            </p>
+          </div>
         </div>
-      </div>
-      <div
-        style={{
-          width: '800px',
-          height: '600px',
-          overflow: 'hidden',
+
+        <div style={{
+          background: 'rgba(0,0,0,0.6)',
+          backdropFilter: 'blur(10px)',
+          border: '1px solid rgba(0,255,70,0.3)',
           borderRadius: '12px',
-          background: 'white'
-        }}
-      >
-      <canvas
-        ref={canvasRef}
-        width={800}
-        height={600}
-        style={{ display: 'block', width: '100%', height: '100%' }}
-      />
+          padding: '24px',
+          color: '#0f0',
+          position: 'relative'
+        }}>
+          <canvas
+            ref={canvasRef}
+            width={800}
+            height={600}
+            style={{ display: 'block', width: '100%', height: '100%' }}
+          />
+          <Image
+            src={dskull}
+            className="dskull-overlay"
+            width={128}
+            height={128}
+            alt="skull"
+          />
+        </div>
+
       </div>
-    </div>
-
-
-
 
     </Layout>
   )
