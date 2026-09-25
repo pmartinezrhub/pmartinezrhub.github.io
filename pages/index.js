@@ -4,6 +4,7 @@ import profilePic from '../public/images/profile.png'
 import { useEffect, useState, useRef } from 'react'
 import Script from 'next/script'
 import AOS from 'aos'
+import MatrixCycler from '../lib/MatrixCycler'
 
 export default function Home() {
   const [timeString, setTimeString] = useState('')
@@ -51,10 +52,8 @@ export default function Home() {
         strategy="afterInteractive"
         onLoad={() => {
           if (window.matrix && canvasRef.current) {
-            let matrixInstance;
-
             window.matrix(canvasRef.current, {
-              chars: ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'],
+              chars: ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'],
               color: 'black',
               font_size: 18,
               background: 'rgba(255,255,255,0.1)',
@@ -63,19 +62,8 @@ export default function Home() {
               resize: false,
               exit: false,
               fps: 8,
-              mount: (m) => { 
-                matrixInstance = m; 
-                matrixInstance.start(); // iniciar cuando se monta
-              }
-            });
-
-            // ejemplo: pausas automáticas
-            setInterval(() => {
-              if (matrixInstance) {
-                matrixInstance.stop();
-                setTimeout(() => matrixInstance.start(), 400);
-              }
-            }, 200);
+              mount: (m) => m.start()
+            })
           }
         }}
       />
@@ -108,12 +96,12 @@ export default function Home() {
           background: 'white'
         }}
       >
-        <canvas
-          ref={canvasRef}
-          width={400}
-          height={200}
-          style={{ display: 'block' }}
-        />
+      <canvas
+        ref={canvasRef}
+        width={800}
+        height={600}
+        style={{ display: 'block', width: '100%', height: '100%' }}
+      />
       </div>
     </div>
 

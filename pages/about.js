@@ -4,6 +4,7 @@ import Image from 'next/image'
 import socialLinkedin from '../public/social_icons/LI-In-Bug.png'
 import socialGitHub from '../public/social_icons/github-mark.png'
 import socialCredly from '../public/social_icons/credly.svg'
+import cyberProfile from '../public/social_icons/cyberprofile.png'
 import StackIcon, { IconName } from "tech-stack-icons";
 
 export default function About() {
@@ -72,7 +73,7 @@ export default function About() {
       <a href="https://www.credly.com/users/pablo-martinez-rivas/badges#credly" target="_blank"><Image src={socialCredly} alt="" width={32} height={32} className="rounded-full" /></a>&nbsp;&nbsp; 
       <a href="https://www.linkedin.com/in/pmartinezrivas/" target="_blank"><Image src={socialLinkedin} alt="skull" width={32} height={32} className="rounded-full" /></a>&nbsp;&nbsp; 
       <a href="https://github.com/pmartinezrhub/" target="_blank"><Image src={socialGitHub} alt="skull" width={32} height={32} className="rounded-full" /></a>&nbsp;&nbsp; 
-     
+      <a href="https://cyber-profile.com/u/pmartinezrhck"><Image src={cyberProfile} alt="skull" width={32} height={32} className="rounded-full" /></a>&nbsp;&nbsp; 
      
       <a href="mailto:admin@pmartinezr.work">
         &nbsp;&nbsp;em@il✉️&nbsp;&nbsp; 
