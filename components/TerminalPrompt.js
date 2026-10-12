@@ -4,9 +4,9 @@ import TerminalTyper from '../lib/TerminalTyper'
 const ROOT_PROMPT = { user: 'root', separator: '@', host: 'victim.org', suffix: ':~#' }
 
 const SCRIPT = [
-  { command: 'whoami', output: 'pablo' },
+  { command: 'ls -ltr', output: 'exploit' },
   { command: 'nmap -p- -sSVC --min-rate 5000 victim.org', 
-    lineDelay: 400,
+    lineDelay: 500,
     output: [ 'Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-09 17:35 +0100',
             'Nmap scan report for 10.129.117.151',
             'Host is up (0.044s latency)',
@@ -24,7 +24,7 @@ const SCRIPT = [
             'Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .',
             'Nmap done: 1 IP address (1 host up) scanned in 51.21 seconds']},
   { command: 'nc -nvlc 4444 &'},
-  { command: 'sudo ./exploit --target victim.org', output: '[+] root shell obtained' },
+  { command: 'sudo ./exploit --target victim.org', lineDelay: 300, output: '[+] root shell obtained' },
   {
     command: 'fg %1',
     lineDelay: 300,
