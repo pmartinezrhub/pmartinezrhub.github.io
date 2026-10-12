@@ -8,7 +8,6 @@ import AOS from 'aos'
 import MatrixLibraryLoader from '../lib/MatrixLibraryLoader'
 import MatrixController from '../lib/MatrixController'
 
-
 const ROLES = ['Pentester', 'Developer', 'Security Researcher']
 const ROLES_LABEL = new Intl.ListFormat('en-GB', { style: 'long', type: 'conjunction' }).format(ROLES)
 
@@ -56,8 +55,11 @@ export default function Home() {
       if (!cancelled && canvasContainerRef.current) {
         const canvas = document.createElement('canvas')
         canvas.id = 'matrix-canvas'
-        canvas.width = 800
-        canvas.height = 600
+        const { width, height } = canvasContainerRef.current.getBoundingClientRect()
+        const canvasWidth = Math.round(width)
+        const canvasHeight = Math.round(height)
+        canvas.width = canvasWidth
+        canvas.height = canvasHeight
         canvas.style.cssText = 'position:absolute;top:0;left:0;display:block;width:100%;height:100%;z-index:1;'
         canvasContainerRef.current.innerHTML = ''
         canvasContainerRef.current.appendChild(canvas)
@@ -68,8 +70,8 @@ export default function Home() {
               controllerRef.current.start(canvas, {
                 chars: ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'],
                 font_size: 18,
-                width: 800,
-                height: 600,
+                width: canvasWidth,
+                height: canvasHeight,
                 resize: false,
                 exit: false
               })
@@ -102,17 +104,17 @@ export default function Home() {
     <Layout>
       <div style={{ height: '10vh' }}></div>
 
-      <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-        <div style={{ flex: 1 }}>
+      <div className="home-layout">
+        <div className="home-intro">
           <div className="p-6 bg-blue-500 rounded-xl text-white">
             <div className="p-6 bg-blue-500 rounded-xl text-white mt-6">
               <p className="text-sm opacity-80">Welcome, I'm</p>
               <h1 className="text-2xl font-bold mt-1">Pablo Martínez Rivas</h1>
               <p className="text-sm mt-2">{ROLES_LABEL}</p>
-              
             </div>
             <p className="matrix-clock">Date - &#91; {timeString} &#93;</p>
           </div>
+
           <div className="profile-avatar">
             <Image
               src={profilePic}
@@ -123,69 +125,19 @@ export default function Home() {
           </div>
         </div>
 
-        <div 
-          style={{
-            position: 'relative',
-            background: 'rgba(0,0,0,0.6)',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(0,255,70,0.3)',
-            borderRadius: '12px',
-            padding: '24px',
-            color: '#0f0',
-            width: '800px',
-            minHeight: '600px',
-            overflow: 'visible'
-          }}
-        >
-          <div style={{
-            position: 'absolute',
-            top: '20px',
-            left: '20px',
-            zIndex: 10,
-            pointerEvents: 'none'
-          }}>
+        <div className="matrix-panel">
+          <div className="matrix-skull">
             <Image
               src={dskull}
               alt="3D skull"
               width={128}
               height={128}
-              style={{ filter: 'drop-shadow(0 0 8px rgba(0,255,70,0.5))' }}
             />
           </div>
 
-          <div 
-            ref={canvasContainerRef}
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              zIndex: 1
-            }}
-          />
+          <div ref={canvasContainerRef} className="matrix-canvas-layer" />
 
-          <div
-            style={{
-              position: 'absolute',
-              left: '20px',
-              right: '20px',
-              bottom: '20px',
-              zIndex: 5,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-end',
-              maxHeight: '400px',
-              padding: '12px 16px',
-              background: 'rgba(0,0,0,0.7)',
-              border: '1px solid rgba(0,255,70,0.3)',
-              borderRadius: '8px',
-              fontFamily: 'monospace',
-              fontSize: '14px',
-              overflow: 'hidden',
-              pointerEvents: 'none'
-            }}
-          >
+          <div className="matrix-terminal">
             <TerminalPrompt />
           </div>
         </div>
