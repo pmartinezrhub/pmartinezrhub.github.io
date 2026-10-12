@@ -8,6 +8,9 @@ import AOS from 'aos'
 import MatrixLibraryLoader from '../lib/MatrixLibraryLoader'
 import MatrixController from '../lib/MatrixController'
 
+const ROLES = ['Pentester', 'Developer', 'Security Researcher']
+const ROLES_LABEL = new Intl.ListFormat('en-GB', { style: 'long', type: 'conjunction' }).format(ROLES)
+
 export default function Home() {
   const [timeString, setTimeString] = useState('')
   const canvasContainerRef = useRef(null)
@@ -102,19 +105,20 @@ export default function Home() {
         <div style={{ flex: 1 }}>
           <div className="p-6 bg-blue-500 rounded-xl text-white">
             <div className="p-6 bg-blue-500 rounded-xl text-white mt-6">
-              <h1 className="flex items-center gap-2">
-                <Image
-                  src={profilePic}
-                  alt="profile"
-                  width={32}
-                  height={32}
-                  className="rounded-full"
-                />
-                &nbsp;&nbsp;Welcome, I'm Pablo Martínez Rivas
-              </h1>
+              <p className="text-sm opacity-80">Welcome, I'm</p>
+              <h1 className="text-2xl font-bold mt-1">Pablo Martínez Rivas</h1>
+              <p className="text-sm mt-2">{ROLES_LABEL}</p>
+              
             </div>
             <p className="matrix-clock">Date - &#91; {timeString} &#93;</p>
           </div>
+          <Image
+                src={profilePic}
+                alt="profile"
+                width={80}
+                height={80}
+                className="block rounded-full mt-4"
+              />
         </div>
 
         <div 
