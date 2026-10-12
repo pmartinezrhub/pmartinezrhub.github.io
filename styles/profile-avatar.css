@@ -1,0 +1,39 @@
+.profile-avatar {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 1.5rem 0 0 2rem;
+}
+
+.profile-avatar img {
+  display: block;
+  border-radius: 50%;
+  animation: avatar-glow 2.4s ease-in-out infinite;
+}
+
+.profile-avatar::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: conic-gradient(transparent 0 65%, #0f0);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
+  animation: avatar-scan 3s linear infinite;
+}
+
+@keyframes avatar-scan {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes avatar-glow {
+  0%, 100% { box-shadow: 0 0 12px rgba(0, 255, 70, 0.35); }
+  50% { box-shadow: 0 0 32px rgba(0, 255, 70, 0.8); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-avatar img,
+  .profile-avatar::before {
+    animation: none;
+  }
+}

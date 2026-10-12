@@ -8,6 +8,7 @@ import AOS from 'aos'
 import MatrixLibraryLoader from '../lib/MatrixLibraryLoader'
 import MatrixController from '../lib/MatrixController'
 
+
 const ROLES = ['Pentester', 'Developer', 'Security Researcher']
 const ROLES_LABEL = new Intl.ListFormat('en-GB', { style: 'long', type: 'conjunction' }).format(ROLES)
 
@@ -112,13 +113,14 @@ export default function Home() {
             </div>
             <p className="matrix-clock">Date - &#91; {timeString} &#93;</p>
           </div>
-          <Image
-                src={profilePic}
-                alt="profile"
-                width={80}
-                height={80}
-                className="block rounded-full mt-4"
-              />
+          <div className="profile-avatar">
+            <Image
+              src={profilePic}
+              alt="profile"
+              width={160}
+              height={160}
+            />
+          </div>
         </div>
 
         <div 
