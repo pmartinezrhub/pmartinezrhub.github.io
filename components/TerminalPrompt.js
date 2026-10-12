@@ -4,7 +4,9 @@ import TerminalTyper from '../lib/TerminalTyper'
 const ROOT_PROMPT = { user: 'root', separator: '@', host: 'victim.org', suffix: ':~#' }
 
 const SCRIPT = [
-  { command: 'ls -ltr', output: 'exploit' },
+  { command: 'ls -ltr', output: ['total 0',
+    '-rwxrwxr-x 1 pablo pablo 0 oct 12 22:05 exploit*']},
+
   { command: 'nmap -p- -sSVC --min-rate 5000 victim.org', 
     lineDelay: 500,
     output: [ 'Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-09 17:35 +0100',
