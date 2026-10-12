@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import TerminalPrompt from '../components/TerminalPrompt'
 import Image from 'next/image'
 import profilePic from '../public/images/profile.png'
 import dskull from '../public/images/3dskull-878774769.gif'
@@ -113,13 +114,6 @@ export default function Home() {
               </h1>
             </div>
             <p className="matrix-clock">Date - &#91; {timeString} &#93;</p>
-            <p className="terminal-prompt">
-              <span className="prompt-user">pablo</span>
-              <span className="prompt-symbol">☠</span>
-              <span className="prompt-host">hack</span>
-              <span className="prompt-symbol">:~$</span>
-              <span className="terminal-cursor">█</span>
-            </p>
           </div>
         </div>
 
@@ -164,6 +158,30 @@ export default function Home() {
               zIndex: 1
             }}
           />
+
+          <div
+            style={{
+              position: 'absolute',
+              left: '20px',
+              right: '20px',
+              bottom: '20px',
+              zIndex: 5,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+              maxHeight: '400px',
+              padding: '12px 16px',
+              background: 'rgba(0,0,0,0.7)',
+              border: '1px solid rgba(0,255,70,0.3)',
+              borderRadius: '8px',
+              fontFamily: 'monospace',
+              fontSize: '14px',
+              overflow: 'hidden',
+              pointerEvents: 'none'
+            }}
+          >
+            <TerminalPrompt />
+          </div>
         </div>
       </div>
     </Layout>
