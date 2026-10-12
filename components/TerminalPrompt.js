@@ -4,9 +4,17 @@ import TerminalTyper from '../lib/TerminalTyper'
 const ROOT_PROMPT = { user: 'root', separator: '@', host: 'victim.org', suffix: ':~#' }
 
 const SCRIPT = [
-  { command: 'ls -ltr', output: ['total 0',
-    '-rwxrwxr-x 1 pablo pablo 0 oct 12 22:05 exploit*']},
-
+  
+  { command: 'ping victim.org -c 3',
+    lineDealay: 300,
+    output: ['PING victim.org (10.129.117.151) 56(84) bytes of data.',
+              '64 bytes from ncamsa-av-in-f14.1e100.net (10.129.117.151): icmp_seq=1 ttl=118 time=48.7 ms',
+              '64 bytes from ncamsa-av-in-f14.1e100.net (10.129.117.151): icmp_seq=2 ttl=118 time=46.5 ms',
+              '64 bytes from ncamsa-av-in-f14.1e100.net (10.129.117.151): icmp_seq=3 ttl=118 time=45.8 ms',
+              '--- victim.org ping statistics ---',
+              '3 packets transmitted, 3 received, 0% packet loss, time 2002ms',
+              'rtt min/avg/max/mdev = 45.838/47.019/48.737/1.242 ms']
+  },
   { command: 'nmap -p- -sSVC --min-rate 5000 victim.org', 
     lineDelay: 500,
     output: [ 'Starting Nmap 7.98 ( https://nmap.org ) at 2026-02-09 17:35 +0100',
@@ -14,7 +22,7 @@ const SCRIPT = [
             'Host is up (0.044s latency)',
             'Not shown: 65533 filtered tcp ports (no-response)',
             'PORT   STATE SERVICE VERSION',
-            '22/tcp open  ssh     OpenSSH 9.2p1 Debian 2+deb12u1 (protocol 2.0)',
+            '22/tcp open  ssh     OpenSSH 6.49',
             '| ssh-hostkey:',
             '|   256 37:2e:14:68:ae:b9:c2:34:2b:6e:d9:92:bc:bf:bd:28 (ECDSA)',
             '|_  256 93:ea:a8:40:42:c1:a8:33:85:b3:56:00:62:1c:a0:ab (ED25519)',
@@ -25,8 +33,22 @@ const SCRIPT = [
             'Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel',
             'Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .',
             'Nmap done: 1 IP address (1 host up) scanned in 51.21 seconds']},
+  { command: 'wget https://raw.githubusercontent.com/BlackHatExploitation/exploit-mikrotik-2026/refs/heads/main/full_exploit.py',
+          lineDelay: 400,
+          output: ['wget wget https://raw.githubusercontent.com/BlackHatExploitation/exploit-mikrotik-2026/refs/heads/main/full_exploit.py',
+          '--2026-10-12 23:58:33-- wget https://raw.githubusercontent.com/BlackHatExploitation/exploit-mikrotik-2026/refs/heads/main/full_exploit.py',
+          'Resolviendo github.com (github.com)... 140.82.121.3',
+          'Conectando con github.com (github.com)[140.82.121.3]:443... conectado.',
+          'Petición HTTP enviada, esperando respuesta... 200 OK',
+          'Longitud: no especificado [text/html]',
+          'Grabando a: «full_exploit.py»',
+          'full_exploit.py                                   [  <=>                                                                                             ] 566,82K  2,18MB/s    en 0,3s    ',
+          '2026-10-12 23:58:34 (2,18 MB/s) - «full_exploit.py» guardado [580428]]']
+  },
+  { command: 'ls -ltr', output: ['total 0',
+    '-rw-rw-r-- 1 pablo pablo 0 oct 12 22:05 full_exploit.py*']},
   { command: 'nc -nvlc 4444 &'},
-  { command: 'sudo ./exploit --target victim.org', lineDelay: 300, output: '[+] root shell obtained' },
+  { command: 'python full_exploit.py --target victim.org', lineDelay: 300, output: '[+] root shell obtained' },
   {
     command: 'fg %1',
     lineDelay: 300,
