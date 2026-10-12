@@ -112,7 +112,7 @@ export default function Home() {
               <h1 className="text-2xl font-bold mt-1">Pablo Martínez Rivas</h1>
               <p className="text-sm mt-2">{ROLES_LABEL}</p>
             </div>
-            <p className="matrix-clock">Date - &#91; {timeString} &#93;</p>
+            <p className="matrix-clock">Date &#91; {timeString} &#93;</p>
           </div>
 
           <div className="profile-avatar">
