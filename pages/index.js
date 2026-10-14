@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Layout from '../components/Layout'
 import TerminalPrompt from '../components/TerminalPrompt'
 import Image from 'next/image'
@@ -102,11 +103,10 @@ export default function Home() {
 
   return (
     <Layout>
-       <Head>
-        <title>{`Pablo Martínez Rivas - ${ROLES_LABEL}`}</title>
-        <meta name="description" content="Pentester, Developer y Security Researcher especializado en pruebas de penetración y análisis de seguridad informática." />
-        <meta name="author" content="Pablo Martínez Rivas" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <Head>
+        <title>Pablo Martínez Rivas | Pentester & Security Researcher</title>
+        <meta name="description" content="Portafolio de Pablo Martínez Rivas, pentester, desarrollador e investigador de seguridad especializada en pruebas de penetración." />
+        <meta name="keywords" content="pentester, security, ciberseguridad, hacking ético, desarrollo" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div style={{ height: '10vh' }}></div>
