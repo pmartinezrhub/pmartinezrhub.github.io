@@ -102,6 +102,13 @@ export default function Home() {
 
   return (
     <Layout>
+       <Head>
+        <title>{`Pablo Martínez Rivas - ${ROLES_LABEL}`}</title>
+        <meta name="description" content="Pentester, Developer y Security Researcher especializado en pruebas de penetración y análisis de seguridad informática." />
+        <meta name="author" content="Pablo Martínez Rivas" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div style={{ height: '10vh' }}></div>
 
       <div className="home-layout">
