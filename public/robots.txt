@@ -1,0 +1,31 @@
+# robots.txt para pmartinezr.work
+User-agent: *
+Allow: /
+
+# Bloquear directorios sensibles (aunque no deben ser accesibles públicamente de todos modos)
+Disallow: /.git/
+Disallow: /.env
+Disallow: /.well-known/private
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /logs/
+
+# Permitir recursos estáticos necesarios para renderizado
+Allow: /_next/static/
+Allow: /static/
+Allow: /*.js
+Allow: /*.css
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.gif
+Allow: /*.svg
+
+# Sitemap
+Sitemap: https://pmartinezr.work/sitemap.xml
+
+# Instrucciones específicas para bots de IA
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: BingBot
+Allow: /
